@@ -1,0 +1,40 @@
+/////////////////////////////////////////////////////////////////////
+// Design unit: vault_controller
+//            :
+// File name  : vault_controller.sv
+//            :
+// Description: vault controller
+//            :
+// Limitations: None
+//            : 
+// System     : SystemVerilog IEEE 1800-2005
+//            :
+// Revision   : Version 1.0 11/15
+/////////////////////////////////////////////////////////////////////
+
+module vault_controller (input logic clock, n_reset, direction, 
+	input logic [4:0] vault_code,
+	output logic [9:0] led // LEDs are used to display information about vault controller's behaviour
+ );
+
+enum {locked, started, unlocked, uptocomb1, lock_reset} state, next_state;
+
+// include your implementation of the ASM chart here.
+
+always_comb	   // always_comb - combinational logic for output signals; implicit sensitivity list
+  begin: com
+  
+	// leds are used to display information about the controller's operation
+	led[0] = (state == locked);       // vault locked
+	led[1] = (state == started);     // vault unlocked
+	led[2] = (state == uptocomb1);    // rotating up towards combination
+	led[3] = (state == unlocked);   // in process of resetting
+	led[4] = direction;					 //direction of turning RE
+	led[5] = vault_code[0];     	    // vault code
+	led[6] = vault_code[1];           // vault code
+	led[7] = vault_code[2];           // vault code
+    led[8] = vault_code[3];           // vault code
+	led[9] = vault_code[4];           // vault code
+  end
+
+endmodule

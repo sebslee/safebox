@@ -1,0 +1,20 @@
+/////////////////////////////////////////////////////////////////////
+// Design unit: vault_controller_standalone_tb
+//            :
+// File name  : vault_controller_standalone_tb.sv
+//            :
+// Description: vault controller stand alone tb 
+//            :
+// Limitations: None
+//            : 
+// System     : SystemVerilog IEEE 1800-2005
+//            :
+// Revision   : Version 1.0 11/15
+/////////////////////////////////////////////////////////////////////
+
+`include "../src/vault_controller"
+
+module vault_controller_standalone_tb ();
+   
+
+   

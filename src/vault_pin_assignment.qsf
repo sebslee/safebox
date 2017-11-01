@@ -1,0 +1,35 @@
+# ******************************
+# * Pin & Location Assignments *
+# ******************************
+# =======
+# Clocks:
+# =======
+set_location_assignment PIN_AF14 -to clock
+# ========================
+# Push Buttons:
+# ========================
+set_location_assignment PIN_AA14 -to n_reset
+# ============
+# Expansion Header (GPIO 0):
+# ============
+set_location_assignment PIN_AC18 -to re_in[0]
+set_location_assignment PIN_Y17  -to re_in[1]
+set_location_assignment PIN_AD17 -to re_in[2]
+set_location_assignment PIN_Y18  -to re_in[3]
+set_location_assignment PIN_AK16 -to re_in[4]
+set_location_assignment PIN_AK18 -to re_in[5]
+set_location_assignment PIN_AK19 -to re_in[6]
+set_location_assignment PIN_AJ19 -to re_in[7]
+# ===========
+# Green LEDs:
+# ===========
+set_location_assignment PIN_V16 -to LEDG[0]
+set_location_assignment PIN_W16 -to LEDG[1]
+set_location_assignment PIN_V17 -to LEDG[2]
+set_location_assignment PIN_V18 -to LEDG[3]
+set_location_assignment PIN_W17 -to LEDG[4]
+set_location_assignment PIN_W19 -to LEDG[5]
+set_location_assignment PIN_Y19 -to LEDG[6]
+set_location_assignment PIN_W20 -to LEDG[7]
+set_location_assignment PIN_W21 -to LEDG[8]
+set_location_assignment PIN_Y21 -to LEDG[9]
