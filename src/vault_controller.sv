@@ -32,7 +32,7 @@ enum {locked, started, unlocked, uptocomb1, lock_reset} state, next_state;
      begin : COMBO_LOGIC_FSM
 	//Default values
 	next_state = state;
-	unique case (state)
+	case (state)
 	  locked: begin
 	     if(direction == 1'b0 && vault_code == '0)
 	       next_state = started;
@@ -62,10 +62,12 @@ enum {locked, started, unlocked, uptocomb1, lock_reset} state, next_state;
 	  lock_reset: begin
 	     if(direction == 1'b0 && vault_code == '0)
 	       next_state = locked;
-	     else (direction == 1'b1 || (direction == 1'b0 && |vault_code == 1'b1))
+	     else if (direction == 1'b1 || (direction == 1'b0 && |vault_code == 1'b1))
 	       next_state = lock_reset;
 	  end
 	endcase // unique case (state)
+end
+
 	
 	  	  				      			    	  	       	     	    	   		           
 always_comb	   // always_comb - combinational logic for output signals; implicit sensitivity list
